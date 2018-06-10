@@ -44,6 +44,19 @@ class DB{
         }
         return self::$connection;
     }
+    
+    public static function execute_sql($sql, $parms=null){
+        try {
+            $db=self::get();
+            $ints=$db->prepare($sql);
+            if ($ints->execute($parms)) {
+                return $ints;
+            }
+        } catch (PDOException $e) {}
+        return false;
+    }
+    
+    
 }
 class User{
     public static function session_start(){

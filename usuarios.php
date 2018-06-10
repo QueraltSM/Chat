@@ -14,7 +14,7 @@ if ($res) {
         $res->setFetchMode(PDO::FETCH_NAMED);
         foreach ($res as $user){
             foreach ($user as $value) {
-                echo $value;
+                echo "<a href='enviarMensaje.php?destinatario=$value'>$value</a>";
             }
         }
 }

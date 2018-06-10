@@ -1,6 +1,6 @@
 <?php
 include_once 'lib.php';
-View::start('Mensajes enviados');
+View::start('Mensajes recibidos');
 View::navigation();
 
 $actualUser=User::getLoggedUser();
